@@ -66,5 +66,35 @@ async function viewAllDepartments() {
     }
 }
 
+// Function to view all roles
+async function viewAllRoles() {
+    try {
+        const query = 'SELECT * FROM roles';
+        const [rows] = await connection.promise().query(query);
+        console.table(rows);
+    } catch (error) {
+        console.error(error);
+    } finally {
+        mainMenu();
+    }
+}
+
+// Function to view all employees
+async function viewAllEmployees() {
+    try {
+        const query = 'SELECT * FROM employees';
+        const [rows] = await connection.promise().query(query);
+        console.table(rows);
+    } catch (error) {
+        console.error(error);
+    } finally {
+        mainMenu();
+    }
+}
+
+// Function to add a department, role, employee, etc.
+
+// Function to update an employee role
+
 // Start the application
 mainMenu();

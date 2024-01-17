@@ -190,6 +190,46 @@ async function addEmployee() {
 }
 
 // Function to update an employee role
+async function updateEmployeeRole() {
+    try {
+        // Fetching employees and roles from the database
+        const employeesQuery = 'SELECT id, CONCAT(first_name, " ", last_name) AS name FROM employees';
+        const rolesQuery = 'SELECT id, title FROM roles';
+
+        const [employees] = await connection.promise().query(employeesQuery);
+        const [roles] = await connection.promise().query(rolesQuery);
+
+        // Formatting for inquirer choices
+        const employeeChoices = employees.map(employee => ({ name: employee.name, value: employee.id }));
+        const roleChoices = roles.map(role => ({ name: role.title, value: role.id }));
+
+        // Prompting to select employee and new role
+        const { employeeId, roleId } = await inquirer.prompt([
+            {
+                name: 'employeeId',
+                type: 'list',
+                message: 'Which employee\'s role do you want to update?',
+                choices: employeeChoices
+            },
+            {
+                name: 'roleId',
+                type: 'list',
+                message: 'What is the new role?',
+                choices: roleChoices
+            }
+        ]);
+
+        // Updating the employee's role in the database
+        const updateQuery = 'UPDATE employees SET role_id = ? WHERE id = ?';
+        await connection.promise().query(updateQuery, [roleId, employeeId]);
+
+        console.log('Employee role updated successfully');
+    } catch (error) {
+        console.error(error);
+    } finally {
+        mainMenu();
+    }
+}
 
 // Start the application
 mainMenu();

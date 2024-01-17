@@ -65,3 +65,6 @@ async function viewAllDepartments() {
         mainMenu();
     }
 }
+
+// Start the application
+mainMenu();

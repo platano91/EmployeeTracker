@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 connection.connect(err => {
     if (err) throw err;
     console.log('Connected to the Employee Tracker database.');
-    mainMenu();
+    //mainMenu();
 });
 
 // Main menu function
@@ -44,6 +44,24 @@ function mainMenu() {
             case 'View All Departments':
                 viewAllDepartments();
                 break;
+            case 'View All Roles':
+                viewAllRoles();
+                break;
+            case 'View All Employees':
+                viewAllEmployees();
+                break;
+            case 'Add a Department':
+                addDepartment();
+                break;
+            case 'Add a Role':
+                addRole();
+                break;
+            case 'Add an Employee':
+                addEmployee();
+                break;
+            case 'Update an Employee Role':
+                updateEmployeeRole();
+                break;
             case 'Delete a Department':
                 deleteDepartment();
                 break;
@@ -54,8 +72,9 @@ function mainMenu() {
                 deleteEmployee();
                 break;
             case 'Exit':
+                console.log('Exiting application...');
                 connection.end();
-                break;
+                return;
             default:
                 console.log(`Invalid action: ${answer.action}`);
                 mainMenu();

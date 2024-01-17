@@ -1,15 +1,37 @@
 # Employee Tracker
+  ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Description
+## Description 
+a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
-Developers frequently have to create interfaces that allow non-developers to easily view and interact with information stored in databases. These interfaces are called **content management systems (CMS)**. Your assignment this week is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-Because this Challenge will require the use of the `Inquirer` package, ensure that you install and use Inquirer version 8.2.4. To do so, use the following command in your project folder: `npm i inquirer@8.2.4`.
+## Installation
+You will need to make sure to have node, mysql and install the appropriate npms. In CLI run npm i mysql2, npm i inquirer@8.2.4, npm i consol.table, and npm i dotenv. To initialize the database run the mysql command, followed by SOURCING the schema and seed files so that you have a basic db built. Finally exit mysql server
 
-Because this application won’t be deployed, you’ll also need to create a walkthrough video that demonstrates its functionality and all of the following acceptance criteria being met. You’ll need to submit a link to the video and add it to the README of your project.
+## Usage 
+In project directory run command node server.js to start up the App
 
-## Mock-Up
 
-[![A video](./Assets/12-sql-homework-video-thumbnail.png)](https://2u-20.wistia.com/medias/2lnle7xnpk)
+[Video Walkthrough Link](https://drive.google.com/file/d/17hcaj9UgfTWKSnks1BgAqK7zZVQKtXEI/view)
 
-![Database schema includes tables labeled “employee,” role,” and “department.”](./Assets/12-sql-homework-demo-01.png)
+![](./Assets/12-sql-homework-demo-01.png)
+
+## License
+This project is licensed under the MIT license.
+
+## Contributing
+N/A
+
+## Tests
+N/A
+
+## Questions
+For questions, please contact 
+- GitHub: [platano91](https://github.com/platano91)

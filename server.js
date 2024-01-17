@@ -52,3 +52,16 @@ function mainMenu() {
         }
     });
 }
+
+// Function to view all departments
+async function viewAllDepartments() {
+    try {
+        const query = 'SELECT * FROM departments';
+        const [rows] = await connection.promise().query(query);
+        console.table(rows);
+    } catch (error) {
+        console.error(error);
+    } finally {
+        mainMenu();
+    }
+}
